@@ -1,0 +1,5 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Context path="/DokFah">
+  <Resource auth="Container" driverClassName="com.mysql.jdbc.Driver" maxActive="20" maxIdle="10" maxWait="-1" name="book" password="9999" type="javax.sql.DataSource" url="jdbc:mysql://localhost:3306/bookstore?zeroDateTimeBehavior=convertToNull" username="root"/>
+  <Resource auth="Container" driverClassName="com.mysql.jdbc.Driver" maxActive="20" maxIdle="10" maxWait="-1" name="dokfah" password="9999" type="javax.sql.DataSource" url="jdbc:mysql://localhost:3306/dokfah?zeroDateTimeBehavior=convertToNull" username="root"/>
+</Context>
