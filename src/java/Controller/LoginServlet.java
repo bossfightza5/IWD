@@ -8,7 +8,11 @@ package Controller;
 import java.io.IOException;
 import java.io.PrintWriter;
 import java.sql.Connection;
+import java.sql.ResultSet;
 import java.sql.SQLException;
+import java.sql.Statement;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 import javax.annotation.Resource;
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
@@ -56,12 +60,22 @@ public class LoginServlet extends HttpServlet {
         
          HttpSession session = request.getSession();
         
+         try{
+             Statement stmt = connection.createStatement();
         try (PrintWriter out = response.getWriter()) {
             /* TODO output your page here. You may use following sample code. */
-            session.setAttribute("username", request.getParameter("username"));
-            response.sendRedirect("main.jsp");
             
+            ResultSet rs = stmt.executeQuery("SELECT * FROM user WHERE username='"+request.getParameter("username")+"';");
+            if(rs.next()){
+                if(request.getParameter("password").equals(rs.getString("password")))
+                    session.setAttribute("username", request.getParameter("username"));
+                    
+            }
+            response.sendRedirect(".");
+        }}catch (SQLException ex){
+             Logger.getLogger(RegisterServlet.class.getName()).log(Level.SEVERE, null, ex);
         }
+    
     }
 
     // <editor-fold defaultstate="collapsed" desc="HttpServlet methods. Click on the + sign on the left to edit the code.">

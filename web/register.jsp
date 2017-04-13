@@ -12,151 +12,11 @@
         <link href="css/bootstrap.min.css" rel="stylesheet">
         <link href="main.css" rel="stylesheet" type="text/css" />
         <title>Register</title>
+        
     </head>
     <body>
         <div class="container">
-        <div id="header">
-            <img src="img/brand.png" height=110 width="100%">
-        </div>
-        <nav class="navbar navbar-default">
-            <!-- Brand and toggle get grouped for better mobile display -->
-            <div class="navbar-header">
-                <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
-                    <span class="sr-only">Toggle navigation</span>
-                    <span class="icon-bar"></span>
-                    <span class="icon-bar"></span>
-                    <span class="icon-bar"></span>
-                </button>
-                <a class="navbar-brand" href="main.jsp">หน้าหลัก</a>
-            </div>
-            <!-- Collect the nav links, forms, and other content for toggling -->
-            <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
-                <ul class="nav navbar-nav">
-                    <li><a href="how_to_buy.html">วิธีการสั่งซื้อ<span></span></a></li>
-                    <li><a href="product.html">สินค้าทั้งหมด</a></li>
-                    <li><a href="register.html">สมัครสมาชิก</a></li>
-                </ul>
-                <ul class="nav navbar-nav navbar-right">
-                    <li><a href="confirm_transaction.html">แจ้งโอนเงิน</a></li>
-                    <li><a href="contact.html">ติดต่อ</a></li>
-                </ul>
-            </div>
-            <!-- /.navbar-collapse -->
-            <!-- /.container-fluid -->
-        </nav>
-        <div id="l_cont">
-            <div class="menubox">
-                <div class="menuhead">
-                    <h3>เข้าสู่ระบบ</h3>
-                </div>
-                <div class="menucontent">
-                    <div class="label">
-                        <label style="float: left;">username : </label>
-                        <input type="text" name="username" class="textinput" />
-                    </div>
-                    <div class="label">
-                        <label style="float: left;">password : </label>
-                        <input type="password" name="password" class="textinput" />
-                    </div>
-                    <div class="label" style="text-align: center; margin-right:10px">
-                        <input type="submit" class="button" value="Login" />
-                    </div>
-                    <div class="label" style="text-align: center; margin-right:10px">
-                        <a href="register.html">สมัครสมาชิก</a> | <a href="forgot_pwd.html">ลืมรหัสผ่าน</a>
-                    </div>
-                </div>
-                <div class="menubottom">
-                </div>
-            </div>
-            <div class="menubox">
-                <div class="menuhead">
-                    <h3>ค้นหาหนังสือ</h3>
-                </div>
-                <div class="menucontent">
-                    <div class="label">
-                        <select name="category">
-                            <option value="">เลือกประเภทหนังสือ</option>
-                            <option value="manga">การ์ตูน</option>
-                            <option value="novel">นิยาย</option>
-                            <option value="magazine">นิตยสาร</option>
-                            <option value="knowledge">ความรู้</option>
-                        </select>
-                    </div>
-                    <div class="label">
-                        <select name="publisher">
-                            <option value="">เลือกสำนักพิมพ์</option>
-                            <option value="siam">สยามอินเตอร์คอมิค</option>
-                            <option value="luck">ลัคพิมพ์</option>
-                            <option value="bongkoch">บงกช</option>
-                            <option value="zenshu">เซนชู</option>
-                            <option value="vibul">วิบูลย์กิจ</option>
-                        </select>
-                    </div>
-                    <div class="label">
-                        <label style="float: left;font-size:15px;color:black;">ความรู้</label>
-                        <br>
-                        <br>
-                        <input type="checkbox" name="genre" value="IT"> เทคโนโลยี </input>
-                        <br>
-                        <input type="checkbox" name="genre" value="IT"> วิทยาศาสตร์ </input>
-                        <br>
-                        <input type="checkbox" name="genre" value="IT"> ศิลปะ </input>
-                        <br>
-                        <input type="checkbox" name="genre" value="IT"> ภาษา </input>
-                        <br>
-                        <input type="checkbox" name="genre" value="IT"> คณิตศาตร์ </input>
-                        <br>
-                        <br>
-                        <label style="float: left;font-size:15px;color:black;">นิยายและการ์ตูน</label>
-                        <br>
-                        <br>
-                        <input type="checkbox" name="genre" value="IT"> คอเมดี้ </input>
-                        <br>
-                        <input type="checkbox" name="genre" value="IT"> ดราม่า </input>
-                        <br>
-                        <input type="checkbox" name="genre" value="IT"> โรแมนติค </input>
-                        <br>
-                        <input type="checkbox" name="genre" value="IT"> เลิฟ-คอเมดี้ </input>
-                        <br>
-                        <input type="checkbox" name="genre" value="IT"> เแอคชั่น </input>
-                        <br>
-                        <input type="checkbox" name="genre" value="IT"> แฟนตาซี </input>
-                        <br>
-                        <input type="checkbox" name="genre" value="IT"> สืบสวนสอบสวน </input>
-                        <br>
-                        <input type="checkbox" name="genre" value="IT"> สยอง </input>
-                        <br>
-                        <input type="checkbox" name="genre" value="IT"> น่ากลัว </input>
-                        <br>
-                        <br>
-                        <label style="float: left;font-size:15px;color:black;">นิตยสาร</label>
-                        <br>
-                        <br>
-                        <input type="checkbox" name="genre" value="IT"> ทำอาหาร </input>
-                        <br>
-                        <input type="checkbox" name="genre" value="IT"> แฟชั่น </input>
-                        <br>
-                        <input type="checkbox" name="genre" value="IT"> บ้านและเฟอร์นิเจอร์ </input>
-                        <br>
-                        <input type="checkbox" name="genre" value="IT"> วัยรุ่น </input>
-                        <br>
-                        <input type="checkbox" name="genre" value="IT"> พระเครื่อง </input>
-                        <br>
-                        <input type="checkbox" name="genre" value="IT"> การ์ตูน </input>
-                        <br>
-                        <br>
-                        <input type="text" name="searchinput" style="width:160px; text-align: center; height:25px;border-radius: 3px" />
-                        <br>
-                        <br>
-                    </div>
-                    <div class="label" style="text-align: center;">
-                        <input type="submit" name="search" value="Search" class="button" style=" margin-right: 10px" />
-                    </div>
-                </div>
-                <div class="menubottom">
-                </div>
-            </div>
-        </div>
+            <%@include file="structure.jsp" %>
         <div id="r_cont">
             <script type="text/javascript" src="js/register.js"></script>
             <form action="RegisterServlet" method="POST" name="register" onsubmit="return(regvalidate())">
@@ -165,41 +25,41 @@
                 <label class="labelreg">
                     username :
                 </label>
-                <input pattern="^[a-zA-Z0-9]{6,50}$" type="text" class="textreg" placeholder="Username" name="username" id="username"/>
+                <input pattern="^[a-zA-Z0-9]{6,50}$" type="text" class="textreg" placeholder="Username" name="username" id="username" value="" />
                 <div class="regnote">เฉพาะA-Z a-z และ 0-9 ความยาว 6-50ตัวอักษร</div>
             </div>
             <div class="regis">
                 <label class="labelreg">
                     password :
                 </label>
-                <input pattern="^[a-zA-Z0-9]{6,50}$" type="password" class="textreg" placeholder="Password" name="password" id="password" />
+                <input pattern="^[a-zA-Z0-9]{6,50}$" type="password" class="textreg" placeholder="Password" name="password" id="password" value="" />
                 <div class="regnote">เฉพาะA-Z a-z และ 0-9 ความยาว 6-50ตัวอักษร</div>
             </div>
             <div class="regis">
                 <label class="labelreg">
                     confirm password :
                 </label>
-                <input pattern="^[a-zA-Z0-9]{6,50}$" title="" type="password" class="textreg" placeholder="Password" name="confirm" id="confirm" />
+                <input pattern="^[a-zA-Z0-9]{6,50}$" title="" type="password" class="textreg" placeholder="Password" name="confirm" id="confirm" value="" />
                 <div class="regnote">เฉพาะA-Z a-z และ 0-9 ความยาว 6-50ตัวอักษร</div>
             </div>
             <div class="regis">
                 <label class="labelreg">
                     E-MAIL :
                 </label>
-                <input type="email" class="textreg" placeholder="E-mail" name="email" id="email" />
+                <input type="email" class="textreg" placeholder="E-mail" name="email" id="email" value="" />
                 <div class="regnote">Example : example@example.com</div>
             </div>
             <div class="regis">
                 <label class="labelreg">
                     First Name :
                 </label>
-                <input type="text" class="textreg" placeholder="First Name" name="fname" />
+                <input type="text" class="textreg" placeholder="First Name" name="fname" value="" />
             </div>
             <div class="regis">
                 <label class="labelreg">
                     Last Name :
                 </label>
-                <input type="text" class="textreg" placeholder="First Name" name="lname" />
+                <input type="text" class="textreg" placeholder="First Name" name="lname" value="" />
             </div>
             <div class="regis">
                 <label class="labelreg">

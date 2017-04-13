@@ -8,11 +8,7 @@ package Controller;
 import java.io.IOException;
 import java.io.PrintWriter;
 import java.sql.Connection;
-import java.sql.ResultSet;
 import java.sql.SQLException;
-import java.sql.Statement;
-import java.util.logging.Level;
-import java.util.logging.Logger;
 import javax.annotation.Resource;
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
@@ -25,12 +21,8 @@ import javax.sql.DataSource;
  *
  * @author Amoeba
  */
-
-
-
-
-@WebServlet(name = "RegisterServlet", urlPatterns = {"/RegisterServlet"})
-public class RegisterServlet extends HttpServlet {
+@WebServlet(name = "addBookServlet", urlPatterns = {"/add"})
+public class addBookServlet extends HttpServlet {
 
     @Resource(name = "dokfah")
     private DataSource dokfah;
@@ -58,36 +50,24 @@ public class RegisterServlet extends HttpServlet {
     protected void processRequest(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
         response.setContentType("text/html;charset=UTF-8");
-        request.setCharacterEncoding("UTF-8");
-        try{
-        Statement stmt = connection.createStatement();
-        
         try (PrintWriter out = response.getWriter()) {
-            
-            
-            String username = request.getParameter("username");
-            String password = request.getParameter("password");
-            String conp = request.getParameter("confirm");
-            String email = request.getParameter("email");
-            String fname = request.getParameter("fname");
-            String lname = request.getParameter("lname");
-            String address = request.getParameter("province")+" "+request.getParameter("address")+" "+request.getParameter("zipcode");
-            ResultSet rs = stmt.executeQuery("SELECT username FROM dokfah.user WHERE username='"+username+"';");
-            if(!rs.next()){
-                if(password.equals(conp)){
-                    stmt.executeUpdate("INSERT INTO dokfah.user VALUES('"+username+"', '"+password+"', '"+email+"', '"+fname+"', '"+lname+"', '"+address+"')");
-            out.println("<script>alert(\"สมัครสมาชิกเรียบร้อย\");location=\"./main.jsp\";</script>");
-                }else
-                    out.println("<script>alert(\"รหัสผ่านไม่ตรงกัน\");history.go(-1);</script>");
-                    
+            String name = request.getParameter("name");
+            String number = request.getParameter("number");
+            String describe = request.getParameter("describe");
+            String type = request.getParameter("type");
+            float price = Float.parseFloat(request.getParameter("price"));
+            int quantity = Integer.parseInt(request.getParameter("quantity"));
+            String picture = request.getParameter("picture");
+            String tag = "";
+            String[] tag2 = request.getParameterValues("tag");
+            for(int i=0;i<tag2.length;i++){
+                tag += tag2[i];
+                if(i != (tag2.length)-1)
+                    tag += ", ";
             }
-            else{
-           out.println("<script>alert(\"usernameนี้มีคนใช้แล้ว\");history.go(-1);</script>");
-            }
-        }
             
-        } catch (SQLException ex) {
-            Logger.getLogger(RegisterServlet.class.getName()).log(Level.SEVERE, null, ex);
+            out.println(name+"<br>"+"<br>"+number+"<br>"+describe+"<br>"+type+"<br>"+price+"<br>"+quantity+"<br>"+picture+"<br>"+tag);
+            
         }
     }
 

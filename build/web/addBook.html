@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<!--
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+-->
+<html>
+    <head>
+        <title>TODO supply a title</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    </head>
+    <body>
+        <form action="add" method="POST">
+            Book Name : <input type="text" name="name" value="" /><br><br>
+            Number : <input type="text" name="number" value="" size="3" /><br><br>
+            Book Describe :<br> <textarea name="describe" rows="10" cols="50" ></textarea><br>
+            type : <select name="type">
+                <option>manga</option>
+                <option>novel</option>
+                <option>magazine</option>
+                <option>etc.</option>
+            </select><br><br>
+            price : <input type="text" name="price" value="" pattern="^[0-9]{}$" /><br><br>
+            quantity : <input type="text" name="quantity" value="" required style="input:" /><br><br>
+            picture : <input type="file" name="picture" value="" /><br>
+            tag : <input type="checkbox" name="tag" value="romantic" /> romantic <input type="checkbox" name="tag" value="drama" /> drama <br>
+            <input type="submit" value="submit" name="submit" />
+        </form>
+    </body>
+</html>

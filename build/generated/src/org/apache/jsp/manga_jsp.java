@@ -4,9 +4,8 @@ import javax.servlet.*;
 import javax.servlet.http.*;
 import javax.servlet.jsp.*;
 import javax.management.Query;
-import javax.management.Query;
 
-public final class main_jsp extends org.apache.jasper.runtime.HttpJspBase
+public final class manga_jsp extends org.apache.jasper.runtime.HttpJspBase
     implements org.apache.jasper.runtime.JspSourceDependent {
 
   private static final JspFactory _jspxFactory = JspFactory.getDefaultFactory();
@@ -76,22 +75,15 @@ public final class main_jsp extends org.apache.jasper.runtime.HttpJspBase
       out.write("\n");
       out.write("\n");
       out.write("\n");
-      out.write("\n");
-      out.write("\n");
-      out.write("\n");
-      out.write("\n");
-      out.write("\n");
       out.write("<!DOCTYPE html>\n");
       out.write("<html>\n");
       out.write("    <head>\n");
       out.write("        <meta http-equiv=\"Content-Type\" content=\"text/html; charset=UTF-8\">\n");
-      out.write("        \n");
       out.write("        <title>Dokfah</title>\n");
-      out.write("        \n");
       out.write("    </head>\n");
       out.write("    <body>\n");
       out.write("        <div class=\"container\">\n");
-      out.write("        ");
+      out.write("            ");
       out.write("\n");
       out.write("\n");
       out.write("\n");
@@ -318,73 +310,125 @@ public final class main_jsp extends org.apache.jasper.runtime.HttpJspBase
       out.write("    </body>\n");
       out.write("</html>\n");
       out.write("\n");
-      out.write("            <div id=\"r_cont\">\n");
-      out.write("                <a id=\"linkcategory\" href=\"manga.jsp?page=1\">การ์ตูน</a>               \n");
+      out.write("            <div class=\"r_cont\">\n");
       out.write("                \n");
-      out.write("                    ");
+      out.write("                ");
       if (_jspx_meth_sql_query_0(_jspx_page_context))
         return;
       out.write("\n");
-      out.write("                        \n");
-      out.write("                        <div id=\"product\">\n");
-      out.write("                    ");
-      if (_jspx_meth_c_forEach_0(_jspx_page_context))
+      out.write("                        ");
+      //  c:choose
+      org.apache.taglibs.standard.tag.common.core.ChooseTag _jspx_th_c_choose_1 = (org.apache.taglibs.standard.tag.common.core.ChooseTag) _jspx_tagPool_c_choose.get(org.apache.taglibs.standard.tag.common.core.ChooseTag.class);
+      _jspx_th_c_choose_1.setPageContext(_jspx_page_context);
+      _jspx_th_c_choose_1.setParent(null);
+      int _jspx_eval_c_choose_1 = _jspx_th_c_choose_1.doStartTag();
+      if (_jspx_eval_c_choose_1 != javax.servlet.jsp.tagext.Tag.SKIP_BODY) {
+        do {
+          out.write("\n");
+          out.write("                            ");
+          //  c:when
+          org.apache.taglibs.standard.tag.rt.core.WhenTag _jspx_th_c_when_1 = (org.apache.taglibs.standard.tag.rt.core.WhenTag) _jspx_tagPool_c_when_test.get(org.apache.taglibs.standard.tag.rt.core.WhenTag.class);
+          _jspx_th_c_when_1.setPageContext(_jspx_page_context);
+          _jspx_th_c_when_1.setParent((javax.servlet.jsp.tagext.Tag) _jspx_th_c_choose_1);
+          _jspx_th_c_when_1.setTest(((java.lang.Boolean) org.apache.jasper.runtime.PageContextImpl.evaluateExpression("${param.page.matches('[0-9]+')}", java.lang.Boolean.class, (PageContext)_jspx_page_context, null)).booleanValue());
+          int _jspx_eval_c_when_1 = _jspx_th_c_when_1.doStartTag();
+          if (_jspx_eval_c_when_1 != javax.servlet.jsp.tagext.Tag.SKIP_BODY) {
+            do {
+              out.write("\n");
+              out.write("                       ");
+ int i = (Integer.parseInt(request.getParameter("page"))-1)*10; 
+              out.write("\n");
+              out.write("                       \n");
+              out.write("                       <h3>การ์ตูน</h3>\n");
+              out.write("                        <div id=\"product\">\n");
+              out.write("                        ");
+              //  c:forEach
+              org.apache.taglibs.standard.tag.rt.core.ForEachTag _jspx_th_c_forEach_0 = (org.apache.taglibs.standard.tag.rt.core.ForEachTag) _jspx_tagPool_c_forEach_var_items_end_begin.get(org.apache.taglibs.standard.tag.rt.core.ForEachTag.class);
+              _jspx_th_c_forEach_0.setPageContext(_jspx_page_context);
+              _jspx_th_c_forEach_0.setParent((javax.servlet.jsp.tagext.Tag) _jspx_th_c_when_1);
+              _jspx_th_c_forEach_0.setVar("row");
+              _jspx_th_c_forEach_0.setItems((java.lang.Object) org.apache.jasper.runtime.PageContextImpl.evaluateExpression("${result.rows}", java.lang.Object.class, (PageContext)_jspx_page_context, null));
+              _jspx_th_c_forEach_0.setBegin( i );
+              _jspx_th_c_forEach_0.setEnd( i+9 );
+              int[] _jspx_push_body_count_c_forEach_0 = new int[] { 0 };
+              try {
+                int _jspx_eval_c_forEach_0 = _jspx_th_c_forEach_0.doStartTag();
+                if (_jspx_eval_c_forEach_0 != javax.servlet.jsp.tagext.Tag.SKIP_BODY) {
+                  do {
+                    out.write("    \n");
+                    out.write("                        \n");
+                    out.write("                        <div id=\"productitem\">\n");
+                    out.write("                            <div id=\"producthumbimg\">\n");
+                    out.write("                                <a href=\"\">\n");
+                    out.write("                                    <img src=\"");
+                    out.write((java.lang.String) org.apache.jasper.runtime.PageContextImpl.evaluateExpression("${row.picture}", java.lang.String.class, (PageContext)_jspx_page_context, null));
+                    out.write("\" width=\"130px\" height=\"170px\" /></a>\n");
+                    out.write("                            </div>\n");
+                    out.write("                            <div id=\"describe\">\n");
+                    out.write("                                <a href=\"\">\n");
+                    out.write("                                    <p> ");
+                    out.write((java.lang.String) org.apache.jasper.runtime.PageContextImpl.evaluateExpression("${row.book_name}", java.lang.String.class, (PageContext)_jspx_page_context, null));
+                    out.write(' ');
+                    out.write((java.lang.String) org.apache.jasper.runtime.PageContextImpl.evaluateExpression("${row.number}", java.lang.String.class, (PageContext)_jspx_page_context, null));
+                    out.write("</p>\n");
+                    out.write("                                </a>\n");
+                    out.write("                                <p>ราคา ");
+                    out.write((java.lang.String) org.apache.jasper.runtime.PageContextImpl.evaluateExpression("${row.price}", java.lang.String.class, (PageContext)_jspx_page_context, null));
+                    out.write(" บาท</p>\n");
+                    out.write("                            </div>\n");
+                    out.write("                            <div class=\"label\" style=\"text-align: center;\">\n");
+                    out.write("                                <input type=\"submit\" class=\"incart\" value=\"หยิบใส่ตะกร้า\" />\n");
+                    out.write("                            </div>\n");
+                    out.write("                        </div>\n");
+                    out.write("                    ");
+                    int evalDoAfterBody = _jspx_th_c_forEach_0.doAfterBody();
+                    if (evalDoAfterBody != javax.servlet.jsp.tagext.BodyTag.EVAL_BODY_AGAIN)
+                      break;
+                  } while (true);
+                }
+                if (_jspx_th_c_forEach_0.doEndTag() == javax.servlet.jsp.tagext.Tag.SKIP_PAGE) {
+                  return;
+                }
+              } catch (Throwable _jspx_exception) {
+                while (_jspx_push_body_count_c_forEach_0[0]-- > 0)
+                  out = _jspx_page_context.popBody();
+                _jspx_th_c_forEach_0.doCatch(_jspx_exception);
+              } finally {
+                _jspx_th_c_forEach_0.doFinally();
+                _jspx_tagPool_c_forEach_var_items_end_begin.reuse(_jspx_th_c_forEach_0);
+              }
+              out.write("\n");
+              out.write("                    </div>\n");
+              out.write("                       ");
+              int evalDoAfterBody = _jspx_th_c_when_1.doAfterBody();
+              if (evalDoAfterBody != javax.servlet.jsp.tagext.BodyTag.EVAL_BODY_AGAIN)
+                break;
+            } while (true);
+          }
+          if (_jspx_th_c_when_1.doEndTag() == javax.servlet.jsp.tagext.Tag.SKIP_PAGE) {
+            _jspx_tagPool_c_when_test.reuse(_jspx_th_c_when_1);
+            return;
+          }
+          _jspx_tagPool_c_when_test.reuse(_jspx_th_c_when_1);
+          out.write("\n");
+          out.write("                        ");
+          if (_jspx_meth_c_otherwise_1((javax.servlet.jsp.tagext.JspTag) _jspx_th_c_choose_1, _jspx_page_context))
+            return;
+          out.write("\n");
+          out.write("                        ");
+          int evalDoAfterBody = _jspx_th_c_choose_1.doAfterBody();
+          if (evalDoAfterBody != javax.servlet.jsp.tagext.BodyTag.EVAL_BODY_AGAIN)
+            break;
+        } while (true);
+      }
+      if (_jspx_th_c_choose_1.doEndTag() == javax.servlet.jsp.tagext.Tag.SKIP_PAGE) {
+        _jspx_tagPool_c_choose.reuse(_jspx_th_c_choose_1);
         return;
-      out.write("\n");
-      out.write("                        <a href=\"manga.jsp?page=1\" style=\"font-size: 10.5px; float:left;\">ดูทั้งหมด</a>\n");
-      out.write("                    </div><br>\n");
-      out.write("                    <a id=\"linkcategory\" href=\"novel.html\">นิยาย</a>\n");
-      out.write("                    \n");
-      out.write("                    ");
-      if (_jspx_meth_sql_query_1(_jspx_page_context))
-        return;
-      out.write("\n");
-      out.write("                        \n");
-      out.write("                        <div id=\"product\">\n");
-      out.write("                    ");
-      if (_jspx_meth_c_forEach_1(_jspx_page_context))
-        return;
-      out.write("\n");
-      out.write("                        <a href=\"novel.jsp\" style=\"font-size: 10.5px; float:left;\">ดูทั้งหมด</a>\n");
-      out.write("                    </div><br>\n");
-      out.write("                     <a id=\"linkcategory\" href=\"magazine.jsp\">นิตยสาร</a>   \n");
-      out.write("                    \n");
-      out.write("                    ");
-      if (_jspx_meth_sql_query_2(_jspx_page_context))
-        return;
-      out.write("\n");
-      out.write("                        \n");
-      out.write("                        <div id=\"product\">\n");
-      out.write("                    ");
-      if (_jspx_meth_c_forEach_2(_jspx_page_context))
-        return;
-      out.write("\n");
-      out.write("                        <a href=\"magazine.jsp\" style=\"font-size: 10.5px; float:left;\">ดูทั้งหมด</a>\n");
-      out.write("                    </div><br>\n");
-      out.write("                    <a id=\"linkcategory\" href=\"etc.jsp\">อื่นๆ</a>\n");
-      out.write("                    <div id=\"product\">\n");
-      out.write("                    \n");
-      out.write("                    ");
-      if (_jspx_meth_sql_query_3(_jspx_page_context))
-        return;
-      out.write("\n");
-      out.write("                        \n");
-      out.write("                        <div id=\"product\">\n");
-      out.write("                    ");
-      if (_jspx_meth_c_forEach_3(_jspx_page_context))
-        return;
-      out.write("\n");
-      out.write("                        <a href=\"etc.jsp\" style=\"font-size: 10.5px; float:left;\">ดูทั้งหมด</a>\n");
-      out.write("                    </div><br>\n");
-      out.write("                   ");
+      }
+      _jspx_tagPool_c_choose.reuse(_jspx_th_c_choose_1);
       out.write("\n");
       out.write("            </div>\n");
-      out.write("                    </div>\n");
       out.write("        </div>\n");
-      out.write("            <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->\n");
-      out.write("            <script src=\"https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js\"></script>\n");
-      out.write("            <!-- Include all compiled plugins (below), or include individual files as needed -->\n");
-      out.write("            <script src=\"js/bootstrap.min.js\"></script>\n");
       out.write("    </body>\n");
       out.write("</html>\n");
     } catch (Throwable t) {
@@ -496,7 +540,7 @@ public final class main_jsp extends org.apache.jasper.runtime.HttpJspBase
         }
         do {
           out.write("\n");
-          out.write("                        SELECT * FROM books WHERE type=\"manga\" ORDER BY update_date DESC;\n");
+          out.write("                        SELECT * FROM books ORDER BY update_date DESC;\n");
           out.write("                    ");
           int evalDoAfterBody = _jspx_th_sql_query_0.doAfterBody();
           if (evalDoAfterBody != javax.servlet.jsp.tagext.BodyTag.EVAL_BODY_AGAIN)
@@ -520,389 +564,30 @@ public final class main_jsp extends org.apache.jasper.runtime.HttpJspBase
     return false;
   }
 
-  private boolean _jspx_meth_c_forEach_0(PageContext _jspx_page_context)
+  private boolean _jspx_meth_c_otherwise_1(javax.servlet.jsp.tagext.JspTag _jspx_th_c_choose_1, PageContext _jspx_page_context)
           throws Throwable {
     PageContext pageContext = _jspx_page_context;
     JspWriter out = _jspx_page_context.getOut();
-    //  c:forEach
-    org.apache.taglibs.standard.tag.rt.core.ForEachTag _jspx_th_c_forEach_0 = (org.apache.taglibs.standard.tag.rt.core.ForEachTag) _jspx_tagPool_c_forEach_var_items_end_begin.get(org.apache.taglibs.standard.tag.rt.core.ForEachTag.class);
-    _jspx_th_c_forEach_0.setPageContext(_jspx_page_context);
-    _jspx_th_c_forEach_0.setParent(null);
-    _jspx_th_c_forEach_0.setVar("row");
-    _jspx_th_c_forEach_0.setItems((java.lang.Object) org.apache.jasper.runtime.PageContextImpl.evaluateExpression("${result.rows}", java.lang.Object.class, (PageContext)_jspx_page_context, null));
-    _jspx_th_c_forEach_0.setBegin(0);
-    _jspx_th_c_forEach_0.setEnd(4);
-    int[] _jspx_push_body_count_c_forEach_0 = new int[] { 0 };
-    try {
-      int _jspx_eval_c_forEach_0 = _jspx_th_c_forEach_0.doStartTag();
-      if (_jspx_eval_c_forEach_0 != javax.servlet.jsp.tagext.Tag.SKIP_BODY) {
-        do {
-          out.write("    \n");
-          out.write("                        \n");
-          out.write("                        <div id=\"productitem\">\n");
-          out.write("                            <div id=\"producthumbimg\">\n");
-          out.write("                                <a href=\"\">\n");
-          out.write("                                    <img src=\"");
-          out.write((java.lang.String) org.apache.jasper.runtime.PageContextImpl.evaluateExpression("${row.picture}", java.lang.String.class, (PageContext)_jspx_page_context, null));
-          out.write("\" width=\"130px\" height=\"170px\" /></a>\n");
-          out.write("                            </div>\n");
-          out.write("                            <div id=\"describe\">\n");
-          out.write("                                <a href=\"\">\n");
-          out.write("                                    <p> ");
-          out.write((java.lang.String) org.apache.jasper.runtime.PageContextImpl.evaluateExpression("${row.book_name}", java.lang.String.class, (PageContext)_jspx_page_context, null));
-          out.write(' ');
-          out.write((java.lang.String) org.apache.jasper.runtime.PageContextImpl.evaluateExpression("${row.number}", java.lang.String.class, (PageContext)_jspx_page_context, null));
-          out.write("</p>\n");
-          out.write("                                </a>\n");
-          out.write("                                <p>ราคา ");
-          out.write((java.lang.String) org.apache.jasper.runtime.PageContextImpl.evaluateExpression("${row.price}", java.lang.String.class, (PageContext)_jspx_page_context, null));
-          out.write(" บาท</p>\n");
-          out.write("                            </div>\n");
-          out.write("                            <div class=\"label\" style=\"text-align: center;\">\n");
-          out.write("                                <input type=\"submit\" class=\"incart\" value=\"หยิบใส่ตะกร้า\" />\n");
-          out.write("                            </div>\n");
-          out.write("                        </div>\n");
-          out.write("                    ");
-          int evalDoAfterBody = _jspx_th_c_forEach_0.doAfterBody();
-          if (evalDoAfterBody != javax.servlet.jsp.tagext.BodyTag.EVAL_BODY_AGAIN)
-            break;
-        } while (true);
-      }
-      if (_jspx_th_c_forEach_0.doEndTag() == javax.servlet.jsp.tagext.Tag.SKIP_PAGE) {
-        return true;
-      }
-    } catch (Throwable _jspx_exception) {
-      while (_jspx_push_body_count_c_forEach_0[0]-- > 0)
-        out = _jspx_page_context.popBody();
-      _jspx_th_c_forEach_0.doCatch(_jspx_exception);
-    } finally {
-      _jspx_th_c_forEach_0.doFinally();
-      _jspx_tagPool_c_forEach_var_items_end_begin.reuse(_jspx_th_c_forEach_0);
+    //  c:otherwise
+    org.apache.taglibs.standard.tag.common.core.OtherwiseTag _jspx_th_c_otherwise_1 = (org.apache.taglibs.standard.tag.common.core.OtherwiseTag) _jspx_tagPool_c_otherwise.get(org.apache.taglibs.standard.tag.common.core.OtherwiseTag.class);
+    _jspx_th_c_otherwise_1.setPageContext(_jspx_page_context);
+    _jspx_th_c_otherwise_1.setParent((javax.servlet.jsp.tagext.Tag) _jspx_th_c_choose_1);
+    int _jspx_eval_c_otherwise_1 = _jspx_th_c_otherwise_1.doStartTag();
+    if (_jspx_eval_c_otherwise_1 != javax.servlet.jsp.tagext.Tag.SKIP_BODY) {
+      do {
+        out.write("\n");
+        out.write("                            <script>location=\"./manga.jsp?page=1\";</script>\n");
+        out.write("                        ");
+        int evalDoAfterBody = _jspx_th_c_otherwise_1.doAfterBody();
+        if (evalDoAfterBody != javax.servlet.jsp.tagext.BodyTag.EVAL_BODY_AGAIN)
+          break;
+      } while (true);
     }
-    return false;
-  }
-
-  private boolean _jspx_meth_sql_query_1(PageContext _jspx_page_context)
-          throws Throwable {
-    PageContext pageContext = _jspx_page_context;
-    JspWriter out = _jspx_page_context.getOut();
-    //  sql:query
-    org.apache.taglibs.standard.tag.rt.sql.QueryTag _jspx_th_sql_query_1 = (org.apache.taglibs.standard.tag.rt.sql.QueryTag) _jspx_tagPool_sql_query_var_dataSource.get(org.apache.taglibs.standard.tag.rt.sql.QueryTag.class);
-    _jspx_th_sql_query_1.setPageContext(_jspx_page_context);
-    _jspx_th_sql_query_1.setParent(null);
-    _jspx_th_sql_query_1.setVar("result");
-    _jspx_th_sql_query_1.setDataSource((java.lang.Object) org.apache.jasper.runtime.PageContextImpl.evaluateExpression("${dokfah}", java.lang.Object.class, (PageContext)_jspx_page_context, null));
-    int[] _jspx_push_body_count_sql_query_1 = new int[] { 0 };
-    try {
-      int _jspx_eval_sql_query_1 = _jspx_th_sql_query_1.doStartTag();
-      if (_jspx_eval_sql_query_1 != javax.servlet.jsp.tagext.Tag.SKIP_BODY) {
-        if (_jspx_eval_sql_query_1 != javax.servlet.jsp.tagext.Tag.EVAL_BODY_INCLUDE) {
-          out = _jspx_page_context.pushBody();
-          _jspx_push_body_count_sql_query_1[0]++;
-          _jspx_th_sql_query_1.setBodyContent((javax.servlet.jsp.tagext.BodyContent) out);
-          _jspx_th_sql_query_1.doInitBody();
-        }
-        do {
-          out.write("\n");
-          out.write("                        SELECT * FROM books WHERE type=\"novel\" ORDER BY update_date DESC;\n");
-          out.write("                    ");
-          int evalDoAfterBody = _jspx_th_sql_query_1.doAfterBody();
-          if (evalDoAfterBody != javax.servlet.jsp.tagext.BodyTag.EVAL_BODY_AGAIN)
-            break;
-        } while (true);
-        if (_jspx_eval_sql_query_1 != javax.servlet.jsp.tagext.Tag.EVAL_BODY_INCLUDE)
-          out = _jspx_page_context.popBody();
-          _jspx_push_body_count_sql_query_1[0]--;
-      }
-      if (_jspx_th_sql_query_1.doEndTag() == javax.servlet.jsp.tagext.Tag.SKIP_PAGE) {
-        return true;
-      }
-    } catch (Throwable _jspx_exception) {
-      while (_jspx_push_body_count_sql_query_1[0]-- > 0)
-        out = _jspx_page_context.popBody();
-      _jspx_th_sql_query_1.doCatch(_jspx_exception);
-    } finally {
-      _jspx_th_sql_query_1.doFinally();
-      _jspx_tagPool_sql_query_var_dataSource.reuse(_jspx_th_sql_query_1);
+    if (_jspx_th_c_otherwise_1.doEndTag() == javax.servlet.jsp.tagext.Tag.SKIP_PAGE) {
+      _jspx_tagPool_c_otherwise.reuse(_jspx_th_c_otherwise_1);
+      return true;
     }
-    return false;
-  }
-
-  private boolean _jspx_meth_c_forEach_1(PageContext _jspx_page_context)
-          throws Throwable {
-    PageContext pageContext = _jspx_page_context;
-    JspWriter out = _jspx_page_context.getOut();
-    //  c:forEach
-    org.apache.taglibs.standard.tag.rt.core.ForEachTag _jspx_th_c_forEach_1 = (org.apache.taglibs.standard.tag.rt.core.ForEachTag) _jspx_tagPool_c_forEach_var_items_end_begin.get(org.apache.taglibs.standard.tag.rt.core.ForEachTag.class);
-    _jspx_th_c_forEach_1.setPageContext(_jspx_page_context);
-    _jspx_th_c_forEach_1.setParent(null);
-    _jspx_th_c_forEach_1.setVar("row");
-    _jspx_th_c_forEach_1.setItems((java.lang.Object) org.apache.jasper.runtime.PageContextImpl.evaluateExpression("${result.rows}", java.lang.Object.class, (PageContext)_jspx_page_context, null));
-    _jspx_th_c_forEach_1.setBegin(0);
-    _jspx_th_c_forEach_1.setEnd(4);
-    int[] _jspx_push_body_count_c_forEach_1 = new int[] { 0 };
-    try {
-      int _jspx_eval_c_forEach_1 = _jspx_th_c_forEach_1.doStartTag();
-      if (_jspx_eval_c_forEach_1 != javax.servlet.jsp.tagext.Tag.SKIP_BODY) {
-        do {
-          out.write("    \n");
-          out.write("                        \n");
-          out.write("                        <div id=\"productitem\">\n");
-          out.write("                            <div id=\"producthumbimg\">\n");
-          out.write("                                <a href=\"\">\n");
-          out.write("                                    <img src=\"");
-          out.write((java.lang.String) org.apache.jasper.runtime.PageContextImpl.evaluateExpression("${row.picture}", java.lang.String.class, (PageContext)_jspx_page_context, null));
-          out.write("\" width=\"130px\" height=\"170px\" /></a>\n");
-          out.write("                            </div>\n");
-          out.write("                            <div id=\"describe\">\n");
-          out.write("                                <a href=\"\">\n");
-          out.write("                                    <p> ");
-          out.write((java.lang.String) org.apache.jasper.runtime.PageContextImpl.evaluateExpression("${row.book_name}", java.lang.String.class, (PageContext)_jspx_page_context, null));
-          out.write(' ');
-          out.write((java.lang.String) org.apache.jasper.runtime.PageContextImpl.evaluateExpression("${row.number}", java.lang.String.class, (PageContext)_jspx_page_context, null));
-          out.write("</p>\n");
-          out.write("                                </a>\n");
-          out.write("                                <p>ราคา ");
-          out.write((java.lang.String) org.apache.jasper.runtime.PageContextImpl.evaluateExpression("${row.price}", java.lang.String.class, (PageContext)_jspx_page_context, null));
-          out.write(" บาท</p>\n");
-          out.write("                            </div>\n");
-          out.write("                            <div class=\"label\" style=\"text-align: center;\">\n");
-          out.write("                                <input type=\"submit\" class=\"incart\" value=\"หยิบใส่ตะกร้า\" />\n");
-          out.write("                            </div>\n");
-          out.write("                        </div>\n");
-          out.write("                    ");
-          int evalDoAfterBody = _jspx_th_c_forEach_1.doAfterBody();
-          if (evalDoAfterBody != javax.servlet.jsp.tagext.BodyTag.EVAL_BODY_AGAIN)
-            break;
-        } while (true);
-      }
-      if (_jspx_th_c_forEach_1.doEndTag() == javax.servlet.jsp.tagext.Tag.SKIP_PAGE) {
-        return true;
-      }
-    } catch (Throwable _jspx_exception) {
-      while (_jspx_push_body_count_c_forEach_1[0]-- > 0)
-        out = _jspx_page_context.popBody();
-      _jspx_th_c_forEach_1.doCatch(_jspx_exception);
-    } finally {
-      _jspx_th_c_forEach_1.doFinally();
-      _jspx_tagPool_c_forEach_var_items_end_begin.reuse(_jspx_th_c_forEach_1);
-    }
-    return false;
-  }
-
-  private boolean _jspx_meth_sql_query_2(PageContext _jspx_page_context)
-          throws Throwable {
-    PageContext pageContext = _jspx_page_context;
-    JspWriter out = _jspx_page_context.getOut();
-    //  sql:query
-    org.apache.taglibs.standard.tag.rt.sql.QueryTag _jspx_th_sql_query_2 = (org.apache.taglibs.standard.tag.rt.sql.QueryTag) _jspx_tagPool_sql_query_var_dataSource.get(org.apache.taglibs.standard.tag.rt.sql.QueryTag.class);
-    _jspx_th_sql_query_2.setPageContext(_jspx_page_context);
-    _jspx_th_sql_query_2.setParent(null);
-    _jspx_th_sql_query_2.setVar("result");
-    _jspx_th_sql_query_2.setDataSource((java.lang.Object) org.apache.jasper.runtime.PageContextImpl.evaluateExpression("${dokfah}", java.lang.Object.class, (PageContext)_jspx_page_context, null));
-    int[] _jspx_push_body_count_sql_query_2 = new int[] { 0 };
-    try {
-      int _jspx_eval_sql_query_2 = _jspx_th_sql_query_2.doStartTag();
-      if (_jspx_eval_sql_query_2 != javax.servlet.jsp.tagext.Tag.SKIP_BODY) {
-        if (_jspx_eval_sql_query_2 != javax.servlet.jsp.tagext.Tag.EVAL_BODY_INCLUDE) {
-          out = _jspx_page_context.pushBody();
-          _jspx_push_body_count_sql_query_2[0]++;
-          _jspx_th_sql_query_2.setBodyContent((javax.servlet.jsp.tagext.BodyContent) out);
-          _jspx_th_sql_query_2.doInitBody();
-        }
-        do {
-          out.write("\n");
-          out.write("                        SELECT * FROM books WHERE type=\"magazine\" ORDER BY update_date DESC;\n");
-          out.write("                    ");
-          int evalDoAfterBody = _jspx_th_sql_query_2.doAfterBody();
-          if (evalDoAfterBody != javax.servlet.jsp.tagext.BodyTag.EVAL_BODY_AGAIN)
-            break;
-        } while (true);
-        if (_jspx_eval_sql_query_2 != javax.servlet.jsp.tagext.Tag.EVAL_BODY_INCLUDE)
-          out = _jspx_page_context.popBody();
-          _jspx_push_body_count_sql_query_2[0]--;
-      }
-      if (_jspx_th_sql_query_2.doEndTag() == javax.servlet.jsp.tagext.Tag.SKIP_PAGE) {
-        return true;
-      }
-    } catch (Throwable _jspx_exception) {
-      while (_jspx_push_body_count_sql_query_2[0]-- > 0)
-        out = _jspx_page_context.popBody();
-      _jspx_th_sql_query_2.doCatch(_jspx_exception);
-    } finally {
-      _jspx_th_sql_query_2.doFinally();
-      _jspx_tagPool_sql_query_var_dataSource.reuse(_jspx_th_sql_query_2);
-    }
-    return false;
-  }
-
-  private boolean _jspx_meth_c_forEach_2(PageContext _jspx_page_context)
-          throws Throwable {
-    PageContext pageContext = _jspx_page_context;
-    JspWriter out = _jspx_page_context.getOut();
-    //  c:forEach
-    org.apache.taglibs.standard.tag.rt.core.ForEachTag _jspx_th_c_forEach_2 = (org.apache.taglibs.standard.tag.rt.core.ForEachTag) _jspx_tagPool_c_forEach_var_items_end_begin.get(org.apache.taglibs.standard.tag.rt.core.ForEachTag.class);
-    _jspx_th_c_forEach_2.setPageContext(_jspx_page_context);
-    _jspx_th_c_forEach_2.setParent(null);
-    _jspx_th_c_forEach_2.setVar("row");
-    _jspx_th_c_forEach_2.setItems((java.lang.Object) org.apache.jasper.runtime.PageContextImpl.evaluateExpression("${result.rows}", java.lang.Object.class, (PageContext)_jspx_page_context, null));
-    _jspx_th_c_forEach_2.setBegin(0);
-    _jspx_th_c_forEach_2.setEnd(4);
-    int[] _jspx_push_body_count_c_forEach_2 = new int[] { 0 };
-    try {
-      int _jspx_eval_c_forEach_2 = _jspx_th_c_forEach_2.doStartTag();
-      if (_jspx_eval_c_forEach_2 != javax.servlet.jsp.tagext.Tag.SKIP_BODY) {
-        do {
-          out.write("    \n");
-          out.write("                        \n");
-          out.write("                        <div id=\"productitem\">\n");
-          out.write("                            <div id=\"producthumbimg\">\n");
-          out.write("                                <a href=\"\">\n");
-          out.write("                                    <img src=\"");
-          out.write((java.lang.String) org.apache.jasper.runtime.PageContextImpl.evaluateExpression("${row.picture}", java.lang.String.class, (PageContext)_jspx_page_context, null));
-          out.write("\" width=\"130px\" height=\"170px\" /></a>\n");
-          out.write("                            </div>\n");
-          out.write("                            <div id=\"describe\">\n");
-          out.write("                                <a href=\"\">\n");
-          out.write("                                    <p> ");
-          out.write((java.lang.String) org.apache.jasper.runtime.PageContextImpl.evaluateExpression("${row.book_name}", java.lang.String.class, (PageContext)_jspx_page_context, null));
-          out.write(' ');
-          out.write((java.lang.String) org.apache.jasper.runtime.PageContextImpl.evaluateExpression("${row.number}", java.lang.String.class, (PageContext)_jspx_page_context, null));
-          out.write("</p>\n");
-          out.write("                                </a>\n");
-          out.write("                                <p>ราคา ");
-          out.write((java.lang.String) org.apache.jasper.runtime.PageContextImpl.evaluateExpression("${row.price}", java.lang.String.class, (PageContext)_jspx_page_context, null));
-          out.write(" บาท</p>\n");
-          out.write("                            </div>\n");
-          out.write("                            <div class=\"label\" style=\"text-align: center;\">\n");
-          out.write("                                <input type=\"submit\" class=\"incart\" value=\"หยิบใส่ตะกร้า\" />\n");
-          out.write("                            </div>\n");
-          out.write("                        </div>\n");
-          out.write("                    ");
-          int evalDoAfterBody = _jspx_th_c_forEach_2.doAfterBody();
-          if (evalDoAfterBody != javax.servlet.jsp.tagext.BodyTag.EVAL_BODY_AGAIN)
-            break;
-        } while (true);
-      }
-      if (_jspx_th_c_forEach_2.doEndTag() == javax.servlet.jsp.tagext.Tag.SKIP_PAGE) {
-        return true;
-      }
-    } catch (Throwable _jspx_exception) {
-      while (_jspx_push_body_count_c_forEach_2[0]-- > 0)
-        out = _jspx_page_context.popBody();
-      _jspx_th_c_forEach_2.doCatch(_jspx_exception);
-    } finally {
-      _jspx_th_c_forEach_2.doFinally();
-      _jspx_tagPool_c_forEach_var_items_end_begin.reuse(_jspx_th_c_forEach_2);
-    }
-    return false;
-  }
-
-  private boolean _jspx_meth_sql_query_3(PageContext _jspx_page_context)
-          throws Throwable {
-    PageContext pageContext = _jspx_page_context;
-    JspWriter out = _jspx_page_context.getOut();
-    //  sql:query
-    org.apache.taglibs.standard.tag.rt.sql.QueryTag _jspx_th_sql_query_3 = (org.apache.taglibs.standard.tag.rt.sql.QueryTag) _jspx_tagPool_sql_query_var_dataSource.get(org.apache.taglibs.standard.tag.rt.sql.QueryTag.class);
-    _jspx_th_sql_query_3.setPageContext(_jspx_page_context);
-    _jspx_th_sql_query_3.setParent(null);
-    _jspx_th_sql_query_3.setVar("result");
-    _jspx_th_sql_query_3.setDataSource((java.lang.Object) org.apache.jasper.runtime.PageContextImpl.evaluateExpression("${dokfah}", java.lang.Object.class, (PageContext)_jspx_page_context, null));
-    int[] _jspx_push_body_count_sql_query_3 = new int[] { 0 };
-    try {
-      int _jspx_eval_sql_query_3 = _jspx_th_sql_query_3.doStartTag();
-      if (_jspx_eval_sql_query_3 != javax.servlet.jsp.tagext.Tag.SKIP_BODY) {
-        if (_jspx_eval_sql_query_3 != javax.servlet.jsp.tagext.Tag.EVAL_BODY_INCLUDE) {
-          out = _jspx_page_context.pushBody();
-          _jspx_push_body_count_sql_query_3[0]++;
-          _jspx_th_sql_query_3.setBodyContent((javax.servlet.jsp.tagext.BodyContent) out);
-          _jspx_th_sql_query_3.doInitBody();
-        }
-        do {
-          out.write("\n");
-          out.write("                        SELECT * FROM books WHERE type=\"magazine\" ORDER BY update_date DESC;\n");
-          out.write("                    ");
-          int evalDoAfterBody = _jspx_th_sql_query_3.doAfterBody();
-          if (evalDoAfterBody != javax.servlet.jsp.tagext.BodyTag.EVAL_BODY_AGAIN)
-            break;
-        } while (true);
-        if (_jspx_eval_sql_query_3 != javax.servlet.jsp.tagext.Tag.EVAL_BODY_INCLUDE)
-          out = _jspx_page_context.popBody();
-          _jspx_push_body_count_sql_query_3[0]--;
-      }
-      if (_jspx_th_sql_query_3.doEndTag() == javax.servlet.jsp.tagext.Tag.SKIP_PAGE) {
-        return true;
-      }
-    } catch (Throwable _jspx_exception) {
-      while (_jspx_push_body_count_sql_query_3[0]-- > 0)
-        out = _jspx_page_context.popBody();
-      _jspx_th_sql_query_3.doCatch(_jspx_exception);
-    } finally {
-      _jspx_th_sql_query_3.doFinally();
-      _jspx_tagPool_sql_query_var_dataSource.reuse(_jspx_th_sql_query_3);
-    }
-    return false;
-  }
-
-  private boolean _jspx_meth_c_forEach_3(PageContext _jspx_page_context)
-          throws Throwable {
-    PageContext pageContext = _jspx_page_context;
-    JspWriter out = _jspx_page_context.getOut();
-    //  c:forEach
-    org.apache.taglibs.standard.tag.rt.core.ForEachTag _jspx_th_c_forEach_3 = (org.apache.taglibs.standard.tag.rt.core.ForEachTag) _jspx_tagPool_c_forEach_var_items_end_begin.get(org.apache.taglibs.standard.tag.rt.core.ForEachTag.class);
-    _jspx_th_c_forEach_3.setPageContext(_jspx_page_context);
-    _jspx_th_c_forEach_3.setParent(null);
-    _jspx_th_c_forEach_3.setVar("row");
-    _jspx_th_c_forEach_3.setItems((java.lang.Object) org.apache.jasper.runtime.PageContextImpl.evaluateExpression("${result.rows}", java.lang.Object.class, (PageContext)_jspx_page_context, null));
-    _jspx_th_c_forEach_3.setBegin(0);
-    _jspx_th_c_forEach_3.setEnd(4);
-    int[] _jspx_push_body_count_c_forEach_3 = new int[] { 0 };
-    try {
-      int _jspx_eval_c_forEach_3 = _jspx_th_c_forEach_3.doStartTag();
-      if (_jspx_eval_c_forEach_3 != javax.servlet.jsp.tagext.Tag.SKIP_BODY) {
-        do {
-          out.write("    \n");
-          out.write("                        \n");
-          out.write("                        <div id=\"productitem\">\n");
-          out.write("                            <div id=\"producthumbimg\">\n");
-          out.write("                                <a href=\"\">\n");
-          out.write("                                    <img src=\"");
-          out.write((java.lang.String) org.apache.jasper.runtime.PageContextImpl.evaluateExpression("${row.picture}", java.lang.String.class, (PageContext)_jspx_page_context, null));
-          out.write("\" width=\"130px\" height=\"170px\" /></a>\n");
-          out.write("                            </div>\n");
-          out.write("                            <div id=\"describe\">\n");
-          out.write("                                <a href=\"\">\n");
-          out.write("                                    <p> ");
-          out.write((java.lang.String) org.apache.jasper.runtime.PageContextImpl.evaluateExpression("${row.book_name}", java.lang.String.class, (PageContext)_jspx_page_context, null));
-          out.write(' ');
-          out.write((java.lang.String) org.apache.jasper.runtime.PageContextImpl.evaluateExpression("${row.number}", java.lang.String.class, (PageContext)_jspx_page_context, null));
-          out.write("</p>\n");
-          out.write("                                </a>\n");
-          out.write("                                <p>ราคา ");
-          out.write((java.lang.String) org.apache.jasper.runtime.PageContextImpl.evaluateExpression("${row.price}", java.lang.String.class, (PageContext)_jspx_page_context, null));
-          out.write(" บาท</p>\n");
-          out.write("                            </div>\n");
-          out.write("                            <div class=\"label\" style=\"text-align: center;\">\n");
-          out.write("                                <input type=\"submit\" class=\"incart\" value=\"หยิบใส่ตะกร้า\" />\n");
-          out.write("                            </div>\n");
-          out.write("                        </div>\n");
-          out.write("                    ");
-          int evalDoAfterBody = _jspx_th_c_forEach_3.doAfterBody();
-          if (evalDoAfterBody != javax.servlet.jsp.tagext.BodyTag.EVAL_BODY_AGAIN)
-            break;
-        } while (true);
-      }
-      if (_jspx_th_c_forEach_3.doEndTag() == javax.servlet.jsp.tagext.Tag.SKIP_PAGE) {
-        return true;
-      }
-    } catch (Throwable _jspx_exception) {
-      while (_jspx_push_body_count_c_forEach_3[0]-- > 0)
-        out = _jspx_page_context.popBody();
-      _jspx_th_c_forEach_3.doCatch(_jspx_exception);
-    } finally {
-      _jspx_th_c_forEach_3.doFinally();
-      _jspx_tagPool_c_forEach_var_items_end_begin.reuse(_jspx_th_c_forEach_3);
-    }
+    _jspx_tagPool_c_otherwise.reuse(_jspx_th_c_otherwise_1);
     return false;
   }
 }
