@@ -19,33 +19,43 @@
                 <sql:query var="result" dataSource="${dokfah}">
                         SELECT * FROM books ORDER BY update_date DESC;
                     </sql:query>
+                    <c:choose>
+                        <c:when test="${result.getRowCount()%2!=0}">
+                            <c:set var="maxp" value="${result.getRowCount()/2+0.5}" />
+                        </c:when>
+                        <c:otherwise>
+                            <c:set var="maxp" value="${result.getRowCount()/2}" scope="session" />
+                        </c:otherwise>
+                    </c:choose>
+                        <fmt:parseNumber var="maxp" integerOnly="true" 
+                       type="number" value="${maxp}" />
+                        <c:set var="page" value="${param.page}"/>
                         <c:choose >
-                            <c:when test="${param.page.matches('[0-9]+')}">
-                       <% int i = (Integer.parseInt(request.getParameter("page"))-1)*10; %>
+                            <c:when test="${page.matches('[0-9]+')&&page<=maxp}">
+                       <% int p = Integer.parseInt(request.getParameter("page"));
+                           int i = (p-1)*2;
+                          
+                       %>
                        <h3>การ์ตูน</h3>
-                        <div id="product">
-                        <c:forEach var="row" items="${result.rows}" begin="<%= i %>" end="<%= i+9 %>" >    
-                        
-                        <div id="productitem">
-                            <div id="producthumbimg">
-                                <a href="">
-                                    <img src="${row.picture}" width="130px" height="170px" /></a>
-                            </div>
-                            <div id="describe">
-                                <a href="">
-                                    <p> ${row.book_name} ${row.number}</p>
-                                </a>
-                                <p>ราคา ${row.price} บาท</p>
-                            </div>
-                            <div class="label" style="text-align: center;">
-                                <input type="submit" class="incart" value="หยิบใส่ตะกร้า" />
-                            </div>
-                        </div>
-                    </c:forEach>
-                    </div>
+                       <%@include file="book.jsp" %>
+                       
+                       <div style="float: left; width:750px; text-align: center;">
+                           <a href="http://localhost:8080/DokFah/manga.jsp?page=1">first page</a>
+                           <% for(int j= Math.max(1, p-3);j<Math.max(8, p+4);j++){
+                             if(j!=p)
+                                out.println("<a href='http://localhost:8080/DokFah/manga.jsp?page="+j+"'>"+j+"</a>");
+                             else
+                                 out.println(j);
+                           }
+                          
+                       
+                       %>
+                       <a href="http://localhost:8080/DokFah/manga.jsp?page=${maxp}">last page</a>
+                       </div>
+                       <a href=""
                        </c:when>
                         <c:otherwise>
-                            <script>location="./manga.jsp?page=1";</script>
+                            <c:redirect url="./manga.jsp?page=1"/>
                         </c:otherwise>
                         </c:choose>
             </div>
