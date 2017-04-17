@@ -15,7 +15,7 @@
     <head>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
         <link href="css/bootstrap.min.css" rel="stylesheet">
-        <link href="main.css" rel="stylesheet" type="text/css" />
+        <link href="css/main.css" rel="stylesheet" type="text/css" />
         <sql:setDataSource var="dokfah" driver="com.mysql.jdbc.Driver"
                        url="jdbc:mysql:///dokfah" user="root" password="9999" />
     </head>
@@ -38,19 +38,22 @@
                 <!-- Collect the nav links, forms, and other content for toggling -->
                 <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
                     <ul class="nav navbar-nav">
-                        <li><a href="how_to_buy.html">วิธีการสั่งซื้อ<span></span></a></li>
+                        <li><a href="how_to_buy.jsp
+                               ">วิธีการสั่งซื้อ<span></span></a></li>
                         <li><a href="product.jsp">สินค้าทั้งหมด</a></li>
                         <li><a href="register.jsp">สมัครสมาชิก</a></li>
                     </ul>
                     <ul class="nav navbar-nav navbar-right">
-                        <li><a href="confirm_transaction.html">แจ้งโอนเงิน</a></li>
-                        <li><a href="contact.html">ติดต่อ</a></li>
+                        <li><a href="confirm_transaction.jsp
+                               ">แจ้งโอนเงิน</a></li>
+                        <li><a href="contact.jsp
+                               ">ติดต่อ</a></li>
                     </ul>
                 </div>
                 <!-- /.navbar-collapse -->
                 <!-- /.container-fluid -->
             </nav>
-            <div id="l_cont">
+            <div class="l_cont">
                 <c:choose>
                     <c:when test="${sessionScope.username==null}">
                 <form action="LoginServlet" method="POST">
@@ -71,7 +74,8 @@
                                 <input type="submit" class="button" value="Login" />
                             </div>
                             <div class="label" style="text-align: center; margin-right:10px">
-                                <a href="register.jsp">สมัครสมาชิก</a> | <a hisf="forgot_pwd.html">ลืมรหัสผ่าน</a>
+                                <a href="register.jsp">สมัครสมาชิก</a> | <a hisf="forgot_pwdjsp
+                                                                            ">ลืมรหัสผ่าน</a>
                             </div>
                         </div>
                         <div class="menubottom">
@@ -91,16 +95,20 @@
                         </p>
                     </ul>
                     <ul>
-                        <img src="img/icon/user.png" height="17" width="17"><a href="profile.html">ข้อมูลสมาชิก</a>
+                        <img src="img/icon/user.png" height="17" width="17"><a href="profile.jsp
+                                                                               ">ข้อมูลสมาชิก</a>
                     </ul>
                     <ul>
-                        <img src="img/icon/cart.png" height="17" width="17"><a href="cart.html">ตะกร้าสินค้า</a>
+                        <img src="img/icon/cart.png" height="17" width="17"><a href="cart.jsp
+                                                                               ">ตะกร้าสินค้า</a>
                     </ul>
                     <ul>
-                        <img src="img/icon/bill.png" height="17" width="17"><a href="history.html">ประวัติการสั่งซื้อ</a>
+                        <img src="img/icon/bill.png" height="17" width="17"><a href="history.jsp
+                                                                               ">ประวัติการสั่งซื้อ</a>
                     </ul>
                     <ul>
-                        <img src="img/icon/pay.png" height="17" width="17"><a href="report_transter.html">แจ้งโอนเงิน</a>
+                        <img src="img/icon/pay.png" height="17" width="17"><a href="report_transter.jsp
+                                                                              ">แจ้งโอนเงิน</a>
                     </ul>
                     <ul>
                         <a href="logout">ออกจากระบบ</a>
@@ -267,7 +275,8 @@
                         </div>
                         <div id="productitem">
                             <div id="producthumbimg">
-                                <a href="knowledge.html">
+                                <a href="etc.jsp
+">
                                     <img src="img/knowledge/minna no nihongo1.jpg" width="130px" height="170px" /></a>
                             </div>
                             <div id="describe">

@@ -1,5 +1,5 @@
 <%-- 
-    Document   : manga.jsp
+    Document   : product.jsp
     Created on : Apr 12, 2017, 8:18:06 PM
     Author     : Amoeba
 --%>
@@ -17,7 +17,7 @@
             <div class="r_cont">
                 
                 <sql:query var="result" dataSource="${dokfah}">
-                        SELECT * FROM books WHERE type='manga' ORDER BY update_date DESC;
+                        SELECT * FROM books ORDER BY update_date DESC;
                     </sql:query>
                         <c:choose>
                         <c:when test="${result.getRowCount()%20!=0}">
@@ -38,40 +38,40 @@
                        <% int p = Integer.parseInt(request.getParameter("page"));
                            int i = (p-1)*10;
                        %>
-                       <h3>การ์ตูน</h3>
+                       <h3>สินค้าทั้งหมด</h3>
                        <%@include file="structurebook.jsp" %>
                        
                        <div style="float: left; width:750px; text-align: center;">
-                           <a href="http://localhost:8080/DokFah/manga.jsp?page=1">first page</a>
+                           <a href="http://localhost:8080/DokFah/product.jsp?page=1">first page</a>
                            <% if(p<=3){
                                for(int j= Math.max(1, p-3);j<Math.min(maxpage+1, 8);j++){
                              if(j!=p)
-                                out.println("<a href='http://localhost:8080/DokFah/manga.jsp?page="+j+"'>"+j+"</a>");
+                                out.println("<a href='http://localhost:8080/DokFah/product.jsp?page="+j+"'>"+j+"</a>");
                              else
                                  out.println(j);
                                }
                            }else if(p>=maxpage-3)
                                    for(int j= maxpage-6;j<maxpage+1;j++){
                              if(j!=p)
-                                out.println("<a href='http://localhost:8080/DokFah/manga.jsp?page="+j+"'>"+j+"</a>");
+                                out.println("<a href='http://localhost:8080/DokFah/product.jsp?page="+j+"'>"+j+"</a>");
                              else
                                  out.println(j);
                                }
                            else
                                for(int j= Math.max(1, p-3);j<Math.min(maxpage+1, p+4);j++){
                              if(j!=p)
-                                out.println("<a href='http://localhost:8080/DokFah/manga.jsp?page="+j+"'>"+j+"</a>");
+                                out.println("<a href='http://localhost:8080/DokFah/product.jsp?page="+j+"'>"+j+"</a>");
                              else
                                  out.println(j);
                                }
                           
                        
                        %>
-                       <a href="http://localhost:8080/DokFah/manga.jsp?page=<%= maxpage %>">last page</a>
+                       <a href="http://localhost:8080/DokFah/product.jsp?page=<%= maxpage %>">last page</a>
                        </div>
                        </c:when>
                         <c:otherwise>
-                            <c:redirect url="./manga.jsp?page=1"/>
+                            <c:redirect url="./product.jsp?page=1"/>
                         </c:otherwise>
                         </c:choose>
             </div>

@@ -14,7 +14,6 @@
 <html>
     <head>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-        
         <title>Dokfah</title>
         
     </head>
@@ -33,11 +32,11 @@
                         
                         <div id="productitem">
                             <div id="producthumbimg">
-                                <a href="">
+                                <a href="./book.jsp?category=${row.book_id}">
                                     <img src="${row.picture}" width="130px" height="170px" /></a>
                             </div>
                             <div id="describe">
-                                <a href="">
+                                <a href="./book.jsp?category=${row.book_id}">
                                     <p> ${row.book_name} ${row.number}</p>
                                 </a>
                                 <p>ราคา ${row.price} บาท</p>
@@ -49,7 +48,7 @@
                     </c:forEach>
                         <a href="manga.jsp?page=1" style="font-size: 10.5px; float:left;">ดูทั้งหมด</a>
                     </div><br>
-                    <a id="linkcategory" href="novel.html">นิยาย</a>
+                    <a id="linkcategory" href="novel.jsp?page=1">นิยาย</a>
                     
                     <sql:query var="result" dataSource="${dokfah}">
                         SELECT * FROM books WHERE type="novel" ORDER BY update_date DESC;
@@ -60,11 +59,11 @@
                         
                         <div id="productitem">
                             <div id="producthumbimg">
-                                <a href="">
+                                <a href="./book.jsp?category=${row.book_id}">
                                     <img src="${row.picture}" width="130px" height="170px" /></a>
                             </div>
                             <div id="describe">
-                                <a href="">
+                                <a href="./book.jsp?category=${row.book_id}">
                                     <p> ${row.book_name} ${row.number}</p>
                                 </a>
                                 <p>ราคา ${row.price} บาท</p>
@@ -74,7 +73,7 @@
                             </div>
                         </div>
                     </c:forEach>
-                        <a href="novel.jsp" style="font-size: 10.5px; float:left;">ดูทั้งหมด</a>
+                        <a href="novel.jsp?page=1" style="font-size: 10.5px; float:left;">ดูทั้งหมด</a>
                     </div><br>
                      <a id="linkcategory" href="magazine.jsp">นิตยสาร</a>   
                     
@@ -87,11 +86,11 @@
                         
                         <div id="productitem">
                             <div id="producthumbimg">
-                                <a href="">
+                                <a href="./book.jsp?category=${row.book_id}">
                                     <img src="${row.picture}" width="130px" height="170px" /></a>
                             </div>
                             <div id="describe">
-                                <a href="">
+                                <a href="./book.jsp?category=${row.book_id}">
                                     <p> ${row.book_name} ${row.number}</p>
                                 </a>
                                 <p>ราคา ${row.price} บาท</p>
@@ -115,11 +114,11 @@
                         
                         <div id="productitem">
                             <div id="producthumbimg">
-                                <a href="">
+                                <a href="./book.jsp?category=${row.book_id}">
                                     <img src="${row.picture}" width="130px" height="170px" /></a>
                             </div>
                             <div id="describe">
-                                <a href="">
+                                <a href="./book.jsp?category=${row.book_id}">
                                     <p> ${row.book_name} ${row.number}</p>
                                 </a>
                                 <p>ราคา ${row.price} บาท</p>
@@ -137,11 +136,11 @@
                     <div id="product">
                         <div id="productitem">
                             <div id="producthumbimg">
-                                <a href="">
+                                <a href="./book.jsp?category=${row.book_id}">
                                     <img src="img/novel/konosuba1.jpg" width="130px" height="170px" /></a>
                             </div>
                             <div id="describe">
-                                <a href="">
+                                <a href="./book.jsp?category=${row.book_id}">
                                     <p>ขอให้โชคดีมีชัยในโลกแฟนตาซี1</p>
                                 </a>
                                 <p>ราคา 120 บาท</p>
@@ -152,10 +151,10 @@
                         </div>
                         <div id="productitem">
                             <div id="producthumbimg">
-                                <a href=""> <img src="img/novel/B.A.D.1.jpg" width="130px" height="170px" /></a>
+                                <a href="./book.jsp?category=${row.book_id}"> <img src="img/novel/B.A.D.1.jpg" width="130px" height="170px" /></a>
                             </div>
                             <div id="describe">
-                                <a href="">
+                                <a href="./book.jsp?category=${row.book_id}">
                                     <p>B.A.D.1</p>
                                 </a>
                                 <p>ราคา 100 บาท</p>
@@ -166,10 +165,10 @@
                         </div>
                         <div id="productitem">
                             <div id="producthumbimg">
-                                <a href=""> <img src="img/novel/goldentime2.jpg" width="130px" height="170px" /></a>
+                                <a href="./book.jsp?category=${row.book_id}"> <img src="img/novel/goldentime2.jpg" width="130px" height="170px" /></a>
                             </div>
                             <div id="describe">
-                                <a href="">
+                                <a href="./book.jsp?category=${row.book_id}">
                                     <p>Golden Time2</p>
                                 </a>
                                 <p>ราคา 90 บาท</p>
@@ -180,11 +179,11 @@
                         </div>
                         <div id="productitem">
                             <div id="producthumbimg">
-                                <a href="">
+                                <a href="./book.jsp?category=${row.book_id}">
                                     <img src="img/manga/Citrus4.jpg" width="130px" height="170px" /></a>
                             </div>
                             <div id="describe">
-                                <a href="">
+                                <a href="./book.jsp?category=${row.book_id}">
                                     <p>Citrus4</p>
                                 </a>
                                 <p>ราคา 55 บาท</p>
@@ -195,11 +194,11 @@
                         </div>
                         <div id="productitem">
                             <div id="producthumbimg">
-                                <a href="knowledge.html">
-                                    <img src="img/knowledge/minna no nihongo1.jpg" width="130px" height="170px" /></a>
+                                <a href="etc.jsp">
+                                    <img src="img/etc/minna no nihongo1.jpg" width="130px" height="170px" /></a>
                             </div>
                             <div id="describe">
-                                <a href="">
+                                <a href="./book.jsp?category=${row.book_id}">
                                     <p>มินนะ โนะ นิฮงโกะ1</p>
                                 </a>
                                 <p>ราคา 237 บาท</p>
