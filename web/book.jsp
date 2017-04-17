@@ -16,10 +16,8 @@
             <%@include file="structure.jsp" %>
             <div class="r_cont">
 
-
-                <% session.setAttribute("book_id", request.getParameter("category"));%>
                 <sql:query var="result" dataSource="${dokfah}" >
-                    SELECT * FROM books WHERE book_id = "${book_id}";
+                    SELECT * FROM books WHERE book_id = '<%= request.getParameter("category") %>';
                 </sql:query>
                 <c:choose>
                     <c:when test="${result.getRowCount()!=0}">
@@ -71,52 +69,29 @@
                         <div class="menuhead">
                             <h4>เล่มอื่นๆ</h4>
                         </div>
-                        <div class="bookcont">
+                        <sql:query var="result" dataSource="dokfah">
+                            SELECT * FROM books WHERE book_id LIKE '<%= request.getParameter("category").substring(0, 5) %>%' AND book_id != <%= request.getParameter("category") %> ORDER BY book_id ASC;
+                        </sql:query>
+                            <div class="bookcont">
+                       <c:forEach var="row" items="${result.rows}">
                             <div id="productitem">
                                 <div id="producthumbimg">
-                                    <a href=""> <img src="img/manga/Citrus2.jpg" width="130px" height="170px" /></a>
+                                    <a href="./book.jsp?category=${row.book_id}"> <img src="${row.picture}" width="130px" height="170px" /></a>
                                 </div>
                                 <div id="describe">
-                                    <a href="">
-                                        <p>Citrus2</p>
+                                    <a href="./book.jsp?category=${row.book_id}">
+                                        <p>${row.book_name}</p>
                                     </a>
-                                    <p>ราคา 55 บาท</p>
+                                    <p>ราคา ${row.price} บาท</p>
                                 </div>
                                 <div class="label" style="text-align: center;">
                                     <input type="submit" class="incart" value="หยิบใส่ตะกร้า" />
                                 </div>
                             </div>
-                            <div id="productitem">
-                                <div id="producthumbimg">
-                                    <a href=""> <img src="img/manga/Citrus3.jpg" width="130px" height="170px" /></a>
-                                </div>
-                                <div id="describe">
-                                    <a href="">
-                                        <p>Citrus3</p>
-                                    </a>
-                                    <p>ราคา 60 บาท</p>
-                                </div>
-                                <div class="label" style="text-align: center;">
-                                    <input type="submit" class="incart" value="หยิบใส่ตะกร้า" />
-                                </div>
-                            </div>
-                            <div id="productitem">
-                                <div id="producthumbimg">
-                                    <a href=""> <img src="img/manga/Citrus4.jpg" width="130px" height="170px" /></a>
-                                </div>
-                                <div id="describe">
-                                    <a href="">
-                                        <p>Citrus4</p>
-                                    </a>
-                                    <p>ราคา 65 บาท</p>
-                                </div>
-                                <div class="label" style="text-align: center;">
-                                    <input type="submit" class="incart" value="หยิบใส่ตะกร้า" />
-                                </div>
-                            </div>                        
+                        </c:forEach>
+                            </div>                     
                         </div>
                     </div>
-                </div>
                 </c:when>
                     <c:otherwise>
                         ไม่พบหน้าที่คุณเลือก
