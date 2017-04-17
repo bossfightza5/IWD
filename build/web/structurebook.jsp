@@ -20,7 +20,7 @@
                                     <img src="${row.picture}" width="130px" height="170px" /></a>
                             </div>
                             <div id="describe">
-                                <a href="">
+                                <a href="./book.jsp?category=${row.book_id}">
                                     <p> ${row.book_name} ${row.number}</p>
                                 </a>
                                 <p>ราคา ${row.price} บาท</p>
