@@ -102,7 +102,7 @@
                     </c:forEach>
                         <a href="magazine.jsp" style="font-size: 10.5px; float:left;">ดูทั้งหมด</a>
                     </div><br>
-                    <a id="linkcategory" href="etc.jsp">อื่นๆ</a>
+                    <a id="linkcategory" href="etc.jsp">ทั่วไป</a>
                     <div id="product">
                     
                     <sql:query var="result" dataSource="${dokfah}">

@@ -38,7 +38,7 @@
                        <% int p = Integer.parseInt(request.getParameter("page"));
                            int i = (p-1)*10;
                        %>
-                       <h3>อื่นๆ</h3>
+                       <h3>ทั่วไป</h3>
                        <%@include file="structurebook.jsp" %>
                        
                        <div style="float: left; width:750px; text-align: center;">
