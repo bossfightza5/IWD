@@ -67,13 +67,18 @@ public class LoginServlet extends HttpServlet {
             
             ResultSet rs = stmt.executeQuery("SELECT * FROM user WHERE username='"+request.getParameter("username")+"';");
             if(rs.next()){
-                if(request.getParameter("password").equals(rs.getString("password")))
+                if(request.getParameter("password").equals(rs.getString("password"))){
                     session.setAttribute("username", request.getParameter("username"));
-                    
+                    session.setAttribute("address", rs.getString("address"));
+                    session.setAttribute("pwd", request.getParameter("password"));
+                    session.setAttribute("fname", rs.getString("fname"));
+                    session.setAttribute("lname", rs.getString("lname"));
+                    session.setAttribute("email", rs.getString("email"));
+                }
             }
             response.sendRedirect(".");
         }}catch (SQLException ex){
-             Logger.getLogger(RegisterServlet.class.getName()).log(Level.SEVERE, null, ex);
+             Logger.getLogger(LoginServlet.class.getName()).log(Level.SEVERE, null, ex);
         }
     
     }

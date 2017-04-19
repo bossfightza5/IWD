@@ -20,7 +20,7 @@
     <body>
         <div class="container">
         <%@include file="structure.jsp" %>
-            <div id="r_cont">
+            <div class="r_cont">
                 <a id="linkcategory" href="manga.jsp?page=1">การ์ตูน</a>               
                 
                     <sql:query var="result" dataSource="${dokfah}">

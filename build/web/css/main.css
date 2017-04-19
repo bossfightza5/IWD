@@ -186,7 +186,7 @@ input:invalid {
     margin-right:5px;
     width: 320px;
     float:left;
-    background: black;
+    border:2px solid black;
 }
 
 .bookdetail{

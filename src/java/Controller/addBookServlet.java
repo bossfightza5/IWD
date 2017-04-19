@@ -8,7 +8,11 @@ package Controller;
 import java.io.IOException;
 import java.io.PrintWriter;
 import java.sql.Connection;
+import java.sql.ResultSet;
 import java.sql.SQLException;
+import java.sql.Statement;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 import javax.annotation.Resource;
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
@@ -21,8 +25,8 @@ import javax.sql.DataSource;
  *
  * @author Amoeba
  */
-@WebServlet(name = "addBookServlet", urlPatterns = {"/add"})
-public class addBookServlet extends HttpServlet {
+@WebServlet(name = "AddBookServlet", urlPatterns = {"/add"})
+public class AddBookServlet extends HttpServlet {
 
     @Resource(name = "dokfah")
     private DataSource dokfah;
@@ -50,6 +54,9 @@ public class addBookServlet extends HttpServlet {
     protected void processRequest(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
         response.setContentType("text/html;charset=UTF-8");
+        try{
+                Statement stmt = connection.createStatement();;
+                ResultSet rs;
         try (PrintWriter out = response.getWriter()) {
             String name = request.getParameter("name");
             String number = request.getParameter("number");
@@ -58,16 +65,28 @@ public class addBookServlet extends HttpServlet {
             float price = Float.parseFloat(request.getParameter("price"));
             int quantity = Integer.parseInt(request.getParameter("quantity"));
             String picture = request.getParameter("picture");
+            String book_id;
             String tag = "";
             String[] tag2 = request.getParameterValues("tag");
             for(int i=0;i<tag2.length;i++){
                 tag += tag2[i];
                 if(i != (tag2.length)-1)
                     tag += ", ";
+            }          
+            rs = stmt.executeQuery("SELECT book_id from books WHERE book_name LIKE '%"+name+" %' ORDER BY update_date DESC");
+            if(rs.next()){
+            book_id = Integer.toString(Integer.parseInt(rs.getString("book_id"))+1);
+            }else{
+                rs = stmt.executeQuery("SELECT book_id from books WHERE type ='"+type+"' ORDER BY book_id DESC");
+                rs.next();
+            book_id = Integer.toString(Integer.parseInt(rs.getString("book_id").substring(0, 5))+1)+"001";
             }
+            name += " "+number;
             
-            out.println(name+"<br>"+"<br>"+number+"<br>"+describe+"<br>"+type+"<br>"+price+"<br>"+quantity+"<br>"+picture+"<br>"+tag);
+            out.println(name+"<br>"+"<br>"+number+"<br>"+describe+"<br>"+type+"<br>"+price+"<br>"+quantity+"<br>"+picture+"<br>"+tag+"<br>"+book_id);
             
+        }}catch (SQLException ex) {
+            Logger.getLogger(RegisterServlet.class.getName()).log(Level.SEVERE, null, ex);
         }
     }
 
