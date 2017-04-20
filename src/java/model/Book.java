@@ -15,7 +15,7 @@ public class Book {
     private String describe;
     private String type;
     private String picture;
-    private int quantity=0;
+    private int quantity=1;
     private double price;
     private double total_price;
     private double weight;
