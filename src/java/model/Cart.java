@@ -13,34 +13,19 @@ import java.util.*;
  * @author Amoeba
  */
 public class Cart {
-    List <Book> books;
-    Connection conn;
+    public List <Book> books;
     
-    public void addItem(String id){
-        try{
-            Statement stmt = conn.createStatement();
-            ResultSet rs = stmt.executeQuery("SELECT * FROM books WHERE book_id = '"+id+"'");
-            while (rs.next()){
-                Book bk = new Book();
-                bk.setId(id);
-                bk.setAuthor_id(rs.getString("author"));
-                bk.setName(rs.getString("name"));
-                bk.setPrice(rs.getFloat("price"));
-                bk.setWeight(rs.getFloat("weight"));
-                books.add(bk);
-            }
-        }catch (SQLException ex){
-            ex.printStackTrace();
-        }
+    public Cart(){
+        books = new LinkedList<Book>();
     }
-    
-    public List<Book> getBooks(){
+
+    public List<Book> getBooks() {
         return books;
     }
     
-    public Cart(Connection conn){
-        this.conn = conn;
-        books = new LinkedList<Book>();
+    public void addBook(Book b){
+        books.add(b);
+        
     }
     
     public void removeItem(String isbn) {

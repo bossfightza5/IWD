@@ -50,14 +50,23 @@ public class AddCartServlet extends HttpServlet {
             String picture = request.getParameter("picture");
             double price = Double.parseDouble(request.getParameter("price"));
             double weight = Double.parseDouble(request.getParameter("weight"));
-             
+            int check = -1;
+            
             Book bk = new Book(id, name, type, describe, picture, price, weight);
             if (cart == null) {
                 cart = new Cart();
                 session.setAttribute("cart", cart);
             }
-            
-            cart.addBook(bk);
+            for(int i=0; i<cart.books.size();i++){
+                if(id.equals(cart.books.get(i).getId()))
+                    check = i;
+            }
+            if(check != -1){
+                cart.books.get(check).setQuantity(cart.books.get(check).getQuantity()+1);
+                cart.books.get(check).setTotal_price(cart.books.get(check).getPrice()*cart.books.get(check).getQuantity());
+            }
+            else
+                cart.addBook(bk);
             RequestDispatcher pg = request.getRequestDispatcher("cart.jsp");
             pg.forward(request, response);   
            }

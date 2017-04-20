@@ -5,7 +5,7 @@
  */
 function tagtype(){
     
-if(document.getElementById('type').value == 'manga' || document.getElementById('type').value == 'novel'){
+if(document.getElementById('type').value == 'manga'){
         document.getElementById('tag').innerHTML = "หมวดหมู่ <br>\n\
                         <input type=\"checkbox\" name=\"tag\" value=\"comedy\"> คอเมดี้ </input>\n\
                         <br>\n\
@@ -33,7 +33,36 @@ if(document.getElementById('type').value == 'manga' || document.getElementById('
                             <option value=\"vibul\">วิบูลย์กิจ</option>\n\
                             <option value=\"animag\">อนิแม็ก</option>\n\
                         </select>";
-    }else if(document.getElementById('type').value == 'etc.'){
+    }else if(document.getElementById('type').value == 'novel'){
+        document.getElementById('tag').innerHTML = "หมวดหมู่ <br>\n\
+                        <input type=\"checkbox\" name=\"tag\" value=\"comedy\"> คอเมดี้ </input>\n\
+                        <br>\n\
+                        <input type=\"checkbox\" name=\"tag\" value=\"drama\"> ดราม่า </input>\n\
+                        <br>\n\
+                        <input type=\"checkbox\" name=\"tag\" value=\"romantic\"> โรแมนติค </input>\n\
+                        <br>\n\
+                        <input type=\"checkbox\" name=\"tag\" value=\"lovecomedy\"> เลิฟ-คอเมดี้ </input>\n\
+                        <br>\n\
+                        <input type=\"checkbox\" name=\"tag\" value=\"action\"> เแอคชั่น </input>\n\
+                        <br>\n\
+                        <input type=\"checkbox\" name=\"tag\" value=\"fantasy\"> แฟนตาซี </input>\n\
+                        <br>\n\
+                        <input type=\"checkbox\" name=\"tag\" value=\"detective\"> สืบสวนสอบสวน </input>\n\
+                        <br>\n\
+                        <input type=\"checkbox\" name=\"tag\" value=\"\"> สยอง </input>\n\
+                        <br>\n\
+                        <input type=\"checkbox\" name=\"tag\" value=\"Horror\"> น่ากลัว </input>";
+                        document.getElementById('publisher').innerHTML = "<select name=\"publisher\">\n\
+                            <option value=\"\">เลือกสำนักพิมพ์</option>\n\
+                            <option value=\"siam\">สยามอินเตอร์คอมิค</option>\n\
+                            <option value=\"luck\">ลัคพิมพ์</option>\n\
+                            <option value=\"bongkoch\">บงกช</option>\n\
+                            <option value=\"zenshu\">เซนชู</option>\n\
+                            <option value=\"vibul\">วิบูลย์กิจ</option>\n\
+                            <option value=\"animag\">อนิแม็ก</option>\n\
+                        </select>";
+    }
+    else if(document.getElementById('type').value == 'etc.'){
         document.getElementById('tag').innerHTML = "หมวดหมู่ <br>\n\
                         <input type=\"checkbox\" name=\"tag\" value=\"IT\"> เทคโนโลยี </input>\n\
                         <br>\n\

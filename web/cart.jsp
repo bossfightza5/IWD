@@ -14,7 +14,7 @@
     <body>
         <div class="container">
             <%@include file="structure.jsp"%>
-            <div id="r_cont">
+            <div class="r_cont">
             <table class="carttable">
                 <col width="148" />
                 <col width="296" />
@@ -32,17 +32,19 @@
                     <td>ลบ</td>
                 </thead>
                 <tbody>
-                    <c:forEach var="row" items="${sessionScope.cart.getBooks}">
+                    <c:if test="${sessionScope.cart != null}">
+                    <c:forEach var="row" items="${sessionScope.cart.getBooks()}">
                     <tr>
                         <td><img src="${row.picture}" width="70" height="100" /></td>
                         <td>${row.name}</td>
                         <td>${row.price}</td>
-                        <td>1</td>
+                        <td>${row.quantity}</td>
                         <td>${row.weight/1000} kg</td>
-                        <td>55</td>
+                        <td>${row.total_price}</td>
                         <td><img src="img/icon/bin.png" width="50" height="50" /></td>
                     </tr>
                     </c:forEach>
+                    </c:if>
                 </tbody>
             </table>
             <div align="right" style=" font-size:15px;">น้ำหนักรวม : 3.1kg</div>
