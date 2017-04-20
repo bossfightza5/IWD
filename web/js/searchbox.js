@@ -7,23 +7,23 @@ function tagtype(){
     
 if(document.getElementById('type').value == 'manga' || document.getElementById('type').value == 'novel'){
         document.getElementById('tag').innerHTML = "หมวดหมู่ <br>\n\
-                        <input type=\"checkbox\" name=\"genre\" value=\"IT\"> คอเมดี้ </input>\n\
+                        <input type=\"checkbox\" name=\"tag\" value=\"comedy\"> คอเมดี้ </input>\n\
                         <br>\n\
-                        <input type=\"checkbox\" name=\"genre\" value=\"IT\"> ดราม่า </input>\n\
+                        <input type=\"checkbox\" name=\"tag\" value=\"drama\"> ดราม่า </input>\n\
                         <br>\n\
-                        <input type=\"checkbox\" name=\"genre\" value=\"IT\"> โรแมนติค </input>\n\
+                        <input type=\"checkbox\" name=\"tag\" value=\"romantic\"> โรแมนติค </input>\n\
                         <br>\n\
-                        <input type=\"checkbox\" name=\"genre\" value=\"IT\"> เลิฟ-คอเมดี้ </input>\n\
+                        <input type=\"checkbox\" name=\"tag\" value=\"lovecomedy\"> เลิฟ-คอเมดี้ </input>\n\
                         <br>\n\
-                        <input type=\"checkbox\" name=\"genre\" value=\"IT\"> เแอคชั่น </input>\n\
+                        <input type=\"checkbox\" name=\"tag\" value=\"action\"> เแอคชั่น </input>\n\
                         <br>\n\
-                        <input type=\"checkbox\" name=\"genre\" value=\"IT\"> แฟนตาซี </input>\n\
+                        <input type=\"checkbox\" name=\"tag\" value=\"fantasy\"> แฟนตาซี </input>\n\
                         <br>\n\
-                        <input type=\"checkbox\" name=\"genre\" value=\"IT\"> สืบสวนสอบสวน </input>\n\
+                        <input type=\"checkbox\" name=\"tag\" value=\"detective\"> สืบสวนสอบสวน </input>\n\
                         <br>\n\
-                        <input type=\"checkbox\" name=\"genre\" value=\"IT\"> สยอง </input>\n\
+                        <input type=\"checkbox\" name=\"tag\" value=\"\"> สยอง </input>\n\
                         <br>\n\
-                        <input type=\"checkbox\" name=\"genre\" value=\"IT\"> น่ากลัว </input>";
+                        <input type=\"checkbox\" name=\"tag\" value=\"Horror\"> น่ากลัว </input>";
         document.getElementById('publisher').innerHTML = "<select name=\"publisher\">\n\
                             <option value=\"\">เลือกสำนักพิมพ์</option>\n\
                             <option value=\"siam\">สยามอินเตอร์คอมิค</option>\n\
@@ -35,29 +35,29 @@ if(document.getElementById('type').value == 'manga' || document.getElementById('
                         </select>";
     }else if(document.getElementById('type').value == 'etc.'){
         document.getElementById('tag').innerHTML = "หมวดหมู่ <br>\n\
-                        <input type=\"checkbox\" name=\"genre\" value=\"IT\"> เทคโนโลยี </input>\n\
+                        <input type=\"checkbox\" name=\"tag\" value=\"IT\"> เทคโนโลยี </input>\n\
                         <br>\n\
-                        <input type=\"checkbox\" name=\"genre\" value=\"IT\"> วิทยาศาสตร์ </input>\n\
+                        <input type=\"checkbox\" name=\"tag\" value=\"IT\"> วิทยาศาสตร์ </input>\n\
                         <br>\n\
-                        <input type=\"checkbox\" name=\"genre\" value=\"IT\"> ศิลปะ </input>\n\
+                        <input type=\"checkbox\" name=\"tag\" value=\"IT\"> ศิลปะ </input>\n\
                         <br>\n\
-                        <input type=\"checkbox\" name=\"genre\" value=\"IT\"> ภาษา </input>\n\
+                        <input type=\"checkbox\" name=\"tag\" value=\"IT\"> ภาษา </input>\n\
                         <br>\n\
-                        <input type=\"checkbox\" name=\"genre\" value=\"IT\"> คณิตศาตร์ </input>";
+                        <input type=\"checkbox\" name=\"tag\" value=\"IT\"> คณิตศาตร์ </input>";
     }
     else if(document.getElementById('type').value == 'magazine'){
         document.getElementById('tag').innerHTML = "หมวดหมู่ <br>\n\
-                        <input type=\"checkbox\" name=\"genre\" value=\"IT\"> ทำอาหาร </input>\n\
+                        <input type=\"checkbox\" name=\"tag\" value=\"IT\"> ทำอาหาร </input>\n\
                         <br>\n\
-                        <input type=\"checkbox\" name=\"genre\" value=\"IT\"> แฟชั่น </input>\n\
+                        <input type=\"checkbox\" name=\"tag\" value=\"IT\"> แฟชั่น </input>\n\
                         <br>\n\
-                        <input type=\"checkbox\" name=\"genre\" value=\"IT\"> บ้านและเฟอร์นิเจอร์ </input>\n\
+                        <input type=\"checkbox\" name=\"tag\" value=\"IT\"> บ้านและเฟอร์นิเจอร์ </input>\n\
                         <br>\n\
-                        <input type=\"checkbox\" name=\"genre\" value=\"IT\"> วัยรุ่น </input>\n\
+                        <input type=\"checkbox\" name=\"tag\" value=\"IT\"> วัยรุ่น </input>\n\
                         <br>\n\
-                        <input type=\"checkbox\" name=\"genre\" value=\"IT\"> พระเครื่อง </input>\n\
+                        <input type=\"checkbox\" name=\"tag\" value=\"IT\"> พระเครื่อง </input>\n\
                         <br>\n\
-                        <input type=\"checkbox\" name=\"genre\" value=\"IT\"> การ์ตูน </input><br>";
+                        <input type=\"checkbox\" name=\"tag\" value=\"IT\"> การ์ตูน </input><br>";
     }else{
         document.getElementById('tag').innerHTML = "";
         document.getElementById('publisher').innerHTML = "";

@@ -123,6 +123,7 @@
                 <div class="menuhead">
                     <h3>ค้นหาหนังสือ</h3>
                 </div>
+                <form action="search" method="POST">
                 <div class="menucontent">
                     <div class="label">
                         <select id="type" name="type" onchange="tagtype()" >
@@ -145,6 +146,7 @@
                         <input type="submit" name="search" value="Search" class="button" style=" margin-right: 10px" />
                     </div>
                 </div>
+                </form>
                 <div class="menubottom">
                 </div>
             </div>
